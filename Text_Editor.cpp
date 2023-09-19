@@ -27,6 +27,19 @@ int main() {
         switch (choice) {
         case 1:
         {
+            printf("You chose append option.\n");
+            int add_size = 200;
+            char* text_to_append = (char*)malloc(add_size * sizeof(char));
+            fgets(text_to_append, add_size, stdin);
+            size_t textadd_length = strlen(text_to_append);
+            size_t line_length = strlen(buffer[current_line]);
+            if (text_to_append[textadd_length - 1] == '\n') text_to_append[textadd_length - 1] = '\0';
+            if (line_length + textadd_length + 1 > initial_symbols) {
+                initial_symbols *= 2;
+                buffer[current_line] = (char*)realloc(buffer[current_line], initial_symbols * sizeof(char));
+                line_length = strlen(buffer[current_line]);
+            }
+            strcat(buffer[current_line], text_to_append);
 
 
             break;
