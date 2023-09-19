@@ -46,7 +46,18 @@ int main() {
         }
         case 2:
         {
-
+            printf("You chose add line option.\n");
+            strcat(buffer[current_line], "\n");
+            current_line++;
+            if (current_line == initial_lines) {
+                initial_lines *= 2;
+                char** buffer = (char**)malloc(initial_lines * sizeof(char*));
+                for (size_t i = 0; i < initial_lines; i++)
+                {
+                    buffer[i] = (char*)malloc(initial_symbols * sizeof(char));
+                    buffer[i][0] = '\0';
+                }
+            }
             break;
         }
         case 3:
