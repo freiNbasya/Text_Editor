@@ -73,7 +73,19 @@ int main() {
         }
         case 4:
         {
-
+            printf("You chose write in file option.");
+            FILE* file;
+            file = fopen("myfile.txt", "w");
+            if (file != NULL)
+            {
+                for (size_t i = 0; i < initial_lines; i++)
+                {
+                    if (buffer[i][0] != '\0') {
+                        fputs(buffer[i], file);
+                    }
+                }
+                fclose(file);
+            }
             break;
         }
         case 5:
