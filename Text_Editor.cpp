@@ -73,7 +73,7 @@ int main() {
         }
         case 4:
         {
-            printf("You chose write in file option.");
+            printf("You chose write in file option.\n");
             FILE* file;
             file = fopen("myfile.txt", "w");
             if (file != NULL)
@@ -90,8 +90,24 @@ int main() {
         }
         case 5:
         {
+            printf("You chose read from file option.\n");
+            FILE* file;
+            char mystring[1000];
+            file = fopen("MyFile.txt", "r");
+            if (file == NULL)
+            {
+                printf("Error opening file");
+            }
+            else
+            {
+                while (fgets(mystring, sizeof(mystring), file)) {
 
+                    printf("%s", mystring);
+                }
+                fclose(file);
+            }
             break;
+
         }
         case 6:
         {
