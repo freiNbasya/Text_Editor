@@ -62,7 +62,13 @@ int main() {
         }
         case 3:
         {
-
+            printf("You chose output option.\n");
+            for (size_t i = 0; i < initial_lines; i++)
+            {
+                if (buffer[i][0] != '\0') {
+                    printf("%s", buffer[i]);
+                }
+            }
             break;
         }
         case 4:
