@@ -111,7 +111,32 @@ int main() {
         }
         case 6:
         {
+            printf("You chose find text in file option.\n");
+            FILE* file;
 
+            char substring[100];
+            char text_line[1000];
+            int line_pos = 0;
+            int symbol_pos = 0;
+
+            printf("Enter the substring to search for: ");
+            fgets(substring, sizeof(substring), stdin);
+            size_t substring_length = strlen(substring);
+            if (substring[substring_length - 1] == '\n') substring[substring_length - 1] = '\0';
+            file = fopen("myfile.txt", "r");
+            if (file == NULL) {
+                printf("Error opening file");
+            }
+            while (fgets(text_line, sizeof(text_line), file)) {
+                char* symbol_pos = text_line;
+                while ((symbol_pos = strstr(symbol_pos, substring))) {
+                    printf("Found at position: %d %d\n", line_pos, symbol_pos - text_line);
+                    symbol_pos++;
+                }
+                line_pos++;
+            }
+
+            fclose(file);
             break;
 
         }
@@ -122,7 +147,9 @@ int main() {
         }
         case 8:
         {
-
+            system("cls");
+            printf("You chose clear console option.\n");
+            break;
         }
         default:
             printf("Invalid choice.\n");

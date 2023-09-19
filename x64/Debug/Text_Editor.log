@@ -1,2 +1,6 @@
 ﻿  Text_Editor.cpp
+C:\Labs_Kse\Paradigms of Programming\Text_Editor\Text_Editor.cpp(133,28): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type '__int64'
+C:\Labs_Kse\Paradigms of Programming\Text_Editor\Text_Editor.cpp(133,28): message : consider using '%lld' in the format string
+C:\Labs_Kse\Paradigms of Programming\Text_Editor\Text_Editor.cpp(133,28): message : consider using '%Id' in the format string
+C:\Labs_Kse\Paradigms of Programming\Text_Editor\Text_Editor.cpp(133,28): message : consider using '%I64d' in the format string
   Text_Editor.vcxproj -> C:\Labs_Kse\Paradigms of Programming\Text_Editor\x64\Debug\Text_Editor.exe
